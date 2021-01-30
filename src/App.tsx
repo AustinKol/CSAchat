@@ -1,4 +1,5 @@
 import { AppBar, Tabs, Tab } from '@material-ui/core';
+import { TabPanel } from '@material-ui/lab';
 import React from 'react';
 import './App.css';
 
@@ -19,6 +20,12 @@ function App() {
           <Tab label="Item Three" />
         </Tabs>
       </AppBar>
+      <div hidden={value !== 0} >
+          <p>Hello! This is page 1.</p>
+      </div>
+      <div hidden={value !== 1} >
+          <p>Hello! This is page 2.</p>
+      </div>
     </div>
   );
 }
