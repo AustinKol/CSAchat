@@ -1,24 +1,24 @@
+import { AppBar, Tabs, Tab } from '@material-ui/core';
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event:any, newValue:any) => {
+    setValue(newValue);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          test nic
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <AppBar position="static">
+        <Tabs value={value} onChange={handleChange}>
+          <Tab label="Item One" />
+          <Tab label="Item Two" />
+          <Tab label="Item Three" />
+        </Tabs>
+      </AppBar>
     </div>
   );
 }
