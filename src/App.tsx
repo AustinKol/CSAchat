@@ -1,7 +1,9 @@
 import { AppBar, Tabs, Tab } from '@material-ui/core';
-import { TabPanel } from '@material-ui/lab';
 import React from 'react';
 import './App.css';
+import Home from './components/Home';
+import SelfHelp from './components/SelfHelp';
+import SignIn from './components/SignIn';
 
 function App() {
 
@@ -15,16 +17,20 @@ function App() {
     <div>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange}>
-          <Tab label="Item One" />
-          <Tab label="Item Two" />
-          <Tab label="Item Three" />
+          <Tab label="Home" />
+          <Tab label="Sign In" />
+          <Tab label="Self Help" />
         </Tabs>
       </AppBar>
+      
       <div hidden={value !== 0} >
-          <p>Hello! This is page 1.</p>
+          <Home />
       </div>
       <div hidden={value !== 1} >
-          <p>Hello! This is page 2.</p>
+          <SignIn />
+      </div>
+      <div hidden={value !== 2} >
+          <SelfHelp />
       </div>
     </div>
   );
