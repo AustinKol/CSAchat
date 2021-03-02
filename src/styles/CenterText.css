@@ -1,0 +1,19 @@
+.container {
+    text-align: center;
+}
+.title {
+    color: #fff;
+    font-size: 4.5rem;
+}
+.goDown {
+    color:"#FF69B4";
+    font-size: "4rem";
+
+}
+.appbar {
+    background: none;
+}
+.appbarWrapper {
+    width: 80%;
+    margin: 0 auto;
+}
