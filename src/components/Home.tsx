@@ -3,6 +3,7 @@ import '../App.css';
 import {makeStyles} from '@material-ui/core/styles';
 import Header from './HomeComponents/Header';
 import Chatbox from './HomeComponents/Chatbox';
+import { CssBaseline } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -16,6 +17,7 @@ function Home() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
+            <CssBaseline />
             <Header />
             <Chatbox />
 
