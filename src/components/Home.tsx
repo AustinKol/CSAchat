@@ -1,16 +1,28 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
-import Header from './HomeComponents/Header';
-import ClickFunnel from './HomeComponents/ClickFunnel';
+
+import { Container, Row, Col, Jumbotron, Button } from 'react-bootstrap';
+
+import Art from '../assets/conversation-animate.svg';
 
 function Home() {
     return (
-        <div className={classes.root}>
-            <CssBaseline />
-            <Header />
-            <Chatbox />
-
-        </div>
+        <Container>
+            <Row>
+                <Col>
+                    <Jumbotron>
+                        <h1>Hello, world!</h1>
+                        <p>
+                            This is a simple hero unit, a simple jumbotron-style component for calling
+                            extra attention to featured content or information.
+                        </p>
+                        <p>
+                            <Button variant="primary">Learn more</Button>
+                        </p>
+                    </Jumbotron>
+                </Col>
+                <Col><img src={Art} alt="Art" /></Col>
+            </Row>
+        </Container>
     );
 }
 
