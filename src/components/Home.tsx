@@ -1,8 +1,11 @@
 import React from 'react';
 
-import { Container, Row, Col, Jumbotron, Button } from 'react-bootstrap';
+import { Container, Row, Col, Jumbotron, Button, Image } from 'react-bootstrap';
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Art from '../assets/conversation-animate.svg';
+import chatButton from '../assets/chatbutton.svg';
 
 function Home() {
     return (
@@ -21,7 +24,22 @@ function Home() {
                     </Jumbotron>
                 </Col>
                 <Col><img src={Art} alt="Art" /></Col>
+
             </Row>
+            <Row className="justfiy-content-md-center">
+                <Col xs lg="2">
+                </Col>
+                <Col>
+                    <a href="/selfhelp">
+                        <img src={chatButton} alt="chatButton"/>
+                    </a>
+                    
+      
+                </Col>
+                <Col xs lg="2">
+                </Col>
+            </Row>
+            
         </Container>
     );
 }
