@@ -9,7 +9,7 @@ function Home() {
         <Container>
             <Row>
                 <Col>
-                    <Jumbotron>
+                    <Jumbotron style={{backgroundColor: "white"}}>
                         <h1>Hello, world!</h1>
                         <p>
                             This is a simple hero unit, a simple jumbotron-style component for calling
