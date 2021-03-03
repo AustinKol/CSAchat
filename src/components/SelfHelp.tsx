@@ -1,7 +1,8 @@
 import React from 'react';
+import AnonChat from './AnonChat';
 
 function SelfHelp() {
-    return (<p>SelfHelp</p>);
+    return (<AnonChat />);
 }
 
 export default SelfHelp;
