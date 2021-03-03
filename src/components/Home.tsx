@@ -5,7 +5,7 @@ import { Container, Row, Col, Jumbotron, Button, Image } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Art from '../assets/conversation-animate.svg';
-import chatButton from '../assets/chatbutton.svg';
+import chatButton from '../assets/example-animate.svg';
 
 function Home() {
     return (
