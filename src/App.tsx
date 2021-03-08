@@ -3,6 +3,7 @@ import React from 'react';
 import Home from './components/Home';
 import SelfHelp from './components/SelfHelp';
 import SignIn from './components/SignIn';
+import './styles/DownArrow.css';
 
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -29,13 +30,16 @@ function App() {
   
   return (
     <Router>
-      <Navbar bg="light" variant="light">
+      <Navbar bg="light" expand="lg">
         <Navbar.Brand href="/">Pairs-Aidants</Navbar.Brand>
-        <Nav className="mr-auto">
-          <Nav.Link href="/">Acceuil</Nav.Link>
-          <Nav.Link href="/signin">Se connecter</Nav.Link>
-          <Nav.Link href="/selfhelp">Resources</Nav.Link>
-        </Nav>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="/">Accueil</Nav.Link>
+            <Nav.Link href="/signin">Connection</Nav.Link>
+            <Nav.Link href="/selfhelp">Ressources</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
       </Navbar>
       
       <Switch>
