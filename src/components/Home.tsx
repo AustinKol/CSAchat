@@ -1,8 +1,7 @@
 import React, {useRef} from 'react';
 
 import { Container, Row, Col, Jumbotron, Button } from 'react-bootstrap';
-
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 import Art from '../assets/conversation-animate.svg';
 import chatButton from '../assets/example-animate.svg';
@@ -53,9 +52,9 @@ function Home() {
                 </Col>
                 <Col>
                     <div ref={chatRef}>
-                        <a href="/anon">
+                        <Link to="/anon">
                             <img src={chatButton} alt="chatButton"/>
-                        </a>
+                        </Link>
                     </div>
                 </Col>
                 <Col xs lg="2">

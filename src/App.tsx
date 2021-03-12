@@ -8,7 +8,7 @@ import './styles/DownArrow.css';
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Switch, Route, HashRouter, Link } from "react-router-dom";
 import firebase from 'firebase';
 import TeacherDashboard from './components/TeacherDashboard';
 import AnonChat from './components/AnonChat';
@@ -31,16 +31,15 @@ function App() {
   console.log("here");
   
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <HashRouter basename="/">
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/">Pairs-Aidants</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">Pairs-Aidants</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/">Accueil</Nav.Link>
-            <Nav.Link href="/signin">Connection</Nav.Link>
-            <Nav.Link href="/selfhelp">Ressources</Nav.Link>
-            
+            <Nav.Link as={Link} to="/">Accueil</Nav.Link>
+            <Nav.Link as={Link} to="/signin">Connection</Nav.Link>
+            <Nav.Link as={Link} to="/selfhelp">Ressources</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -62,7 +61,7 @@ function App() {
           <AnonChat />
         </Route>
       </Switch>
-    </Router>
+    </HashRouter>
   );
 }
 

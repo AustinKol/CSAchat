@@ -17,7 +17,7 @@ function ChatPage(props:any) {
     const userMessages = firestore.collection('users').doc(props.uid).collection("messages");
     const query = userMessages.orderBy('time');
 
-    const timeCreated = firestore.collection('users').doc(props.uid).get().then((doc) => {
+    firestore.collection('users').doc(props.uid).get().then((doc) => {
         if (doc.data()?.["timeCreated"]) {
             return;
         } else {

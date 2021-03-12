@@ -2,7 +2,7 @@ import firebase from "firebase";
 import React from "react";
 import { useState } from "react";
 import { ListGroup } from "react-bootstrap";
-import { useCollection, useCollectionData } from "react-firebase-hooks/firestore";
+import { useCollection } from "react-firebase-hooks/firestore";
 import ChatPage from "./ChatPage";
 
 function TeacherDashboard() {
