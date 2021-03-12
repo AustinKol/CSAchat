@@ -29,7 +29,7 @@ function App() {
   console.log("here");
   
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Navbar bg="light" expand="lg">
         <Navbar.Brand href="/">Pairs-Aidants</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

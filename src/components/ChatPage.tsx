@@ -17,6 +17,14 @@ function ChatPage(props:any) {
     const userMessages = firestore.collection('users').doc(props.uid).collection("messages");
     const query = userMessages.orderBy('time');
 
+    const timeCreated = firestore.collection('users').doc(props.uid).get().then((doc) => {
+        if (doc.data()?.["timeCreated"]) {
+            return;
+        } else {
+            firestore.collection('users').doc(props.uid).set({timeCreated: firebase.firestore.FieldValue.serverTimestamp()});
+        }
+    });
+
     const sendMessage = async (msg:any, person:any) => {
         await userMessages.add({
             text: msg,
