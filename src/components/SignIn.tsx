@@ -33,7 +33,7 @@ function SignIn() {
     }
     
     return (<>
-        {user ? <TeacherDashboard/> : <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth}/>}
+        {user && !user.isAnonymous ? <TeacherDashboard/> : <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth}/>}
     </>);
 }
 

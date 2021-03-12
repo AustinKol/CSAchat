@@ -2,7 +2,7 @@ import React from 'react';
 import AnonChat from './AnonChat';
 
 function SelfHelp() {
-    return (<AnonChat />);
+    return (<>"En progres"</>);
 }
 
 export default SelfHelp;

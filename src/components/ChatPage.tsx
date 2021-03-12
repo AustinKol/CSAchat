@@ -46,12 +46,12 @@ function ChatPage(props:any) {
                 <Row>
                     <Col>
                         <ListGroup>
-                            {messages && messages.map((msg:any, i) => <ListGroup.Item key={i}>{msg["text"]}</ListGroup.Item>)}
+                            {messages && messages.map((msg:any, i) => <ListGroup.Item style={msg["person"]^props.person ? {placeSelf: "flex-start"} : {placeSelf: "flex-end"}} key={i}>{msg["text"]}</ListGroup.Item>)}
                             <div ref={scrollThing}></div>
                         </ListGroup>
                     </Col>
                 </Row>
-                <Form onSubmit={async (e) => {e.preventDefault(); sendMessage(formValue, 0)}}>
+                <Form onSubmit={async (e) => {e.preventDefault(); sendMessage(formValue, props.person)}}>
                         <Row>
                             <Col xs={10}>
                                 <Form.Group controlId="msg">

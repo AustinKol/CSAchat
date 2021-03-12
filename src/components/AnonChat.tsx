@@ -8,7 +8,7 @@ function AnonChat() {
     const [user, loading] = useAuthState(auth);
     auth.signInAnonymously();
     return (<>
-        {!loading ? <ChatPage uid={user.uid} /> : "Telechargement en cours..."}
+        {!loading && user ? <ChatPage uid={user.uid} person={0}/> : "Telechargement en cours..."}
     </>);
 }
 

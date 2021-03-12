@@ -10,6 +10,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import firebase from 'firebase';
+import TeacherDashboard from './components/TeacherDashboard';
+import AnonChat from './components/AnonChat';
 
 function App() {
   if (!firebase.apps.length) {
@@ -52,6 +54,12 @@ function App() {
         </Route>
         <Route path="/selfhelp">
           <SelfHelp />
+        </Route>
+        <Route path="/teacherdash">
+          <TeacherDashboard />
+        </Route>
+        <Route path="/anon">
+          <AnonChat />
         </Route>
       </Switch>
     </Router>

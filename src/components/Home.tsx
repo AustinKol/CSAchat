@@ -53,7 +53,7 @@ function Home() {
                 </Col>
                 <Col>
                     <div ref={chatRef}>
-                        <a href="/selfhelp">
+                        <a href="/anon">
                             <img src={chatButton} alt="chatButton"/>
                         </a>
                     </div>
