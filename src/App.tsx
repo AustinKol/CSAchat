@@ -38,6 +38,7 @@ function App() {
             <Nav.Link href="/">Accueil</Nav.Link>
             <Nav.Link href="/signin">Connection</Nav.Link>
             <Nav.Link href="/selfhelp">Ressources</Nav.Link>
+            
           </Nav>
         </Navbar.Collapse>
       </Navbar>
