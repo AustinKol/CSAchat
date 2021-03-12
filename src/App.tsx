@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import firebase from 'firebase';
 import TeacherDashboard from './components/TeacherDashboard';
 import AnonChat from './components/AnonChat';
+import About from './components/About';
 
 function App() {
   if (!firebase.apps.length) {
@@ -40,6 +41,7 @@ function App() {
             <Nav.Link href="/">Accueil</Nav.Link>
             <Nav.Link href="/signin">Connection</Nav.Link>
             <Nav.Link href="/selfhelp">Ressources</Nav.Link>
+            <Nav.Link href="/about">Nous connaître</Nav.Link>
             
           </Nav>
         </Navbar.Collapse>
@@ -60,6 +62,9 @@ function App() {
         </Route>
         <Route path="/anon">
           <AnonChat />
+        </Route>
+        <Route path="/about">
+          <About />
         </Route>
       </Switch>
     </Router>

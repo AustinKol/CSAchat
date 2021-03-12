@@ -25,13 +25,12 @@ function Home() {
             <Row>
                 <Col>
                     <Jumbotron style={{backgroundColor: "white"}}>
-                        <h1>Hello, world!</h1>
+                        <h1>Bienvenue</h1>
                         <p>
-                            This is a simple hero unit, a simple jumbotron-style component for calling
-                            extra attention to featured content or information.
+                            Nous sommes les pair aidants. Nous sommes içi pour vous aider. Chattez avec nous!
                         </p>
                         <p>
-                            <Button variant="primary">Learn more</Button>
+                            <Button variant="primary" href="/about">Nous connaître plus</Button>
                         </p>
                     </Jumbotron>
                 </Col>
