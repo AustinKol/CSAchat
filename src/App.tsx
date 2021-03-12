@@ -12,6 +12,7 @@ import { BrowserRouter as Switch, Route, HashRouter, Link } from "react-router-d
 import firebase from 'firebase';
 import TeacherDashboard from './components/TeacherDashboard';
 import AnonChat from './components/AnonChat';
+import About from './components/About';
 
 function App() {
   if (!firebase.apps.length) {
@@ -40,6 +41,7 @@ function App() {
             <Nav.Link as={Link} to="/">Accueil</Nav.Link>
             <Nav.Link as={Link} to="/signin">Connection</Nav.Link>
             <Nav.Link as={Link} to="/selfhelp">Ressources</Nav.Link>
+            <Nav.Link as={Link} to="/about">Nous connaître</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -59,6 +61,9 @@ function App() {
         </Route>
         <Route path="/anon">
           <AnonChat />
+        </Route>
+        <Route path="/about">
+          <About />
         </Route>
       </Switch>
     </HashRouter>
