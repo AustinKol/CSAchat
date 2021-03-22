@@ -8,7 +8,7 @@ body{
       top: 50%;
       left: 50%;
       transform: translate(-50%,-50%);
-      height: 200px;
+      height: 300px;
 
   }
   .arrow span{
@@ -28,7 +28,7 @@ body{
       animation-delay: -0.4s;
   }
   .patting {
-      height: 500px;
+      height: 350px;
   }
   @keyframes animate {
       0%{
