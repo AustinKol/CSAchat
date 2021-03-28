@@ -1,45 +1,36 @@
-body{
-    margin: 0;
-    padding: 0;
-    background-color: #FFF;
-  }
-  .arrow{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      height: 200px;
+.arrow span{
+    display: block;
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid #06A8FF;
+    border-right: 5px solid #06A8FF;
 
-  }
-  .arrow span{
-      display: block;
-      width: 30px;
-      height: 30px;
-      border-bottom: 5px solid #06A8FF;
-      border-right: 5px solid #06A8FF;
-      transform: rotate(45deg);
-      margin: -10px;
-      animation: animate 2s infinite;
-  }
-  .arrow span:nth-child(2){
-      animation-delay: -0.2s;
-  }
-  .arrow span:nth-child(3){
-      animation-delay: -0.4s;
-  }
-  .patting {
-      height: 500px;
-  }
-  @keyframes animate {
-      0%{
-          opacity: 0;
-          transform: rotate(45deg) translate(-20px,-20px);
-      }
-      50%{
-          opacity: 1;
-      }
-      100%{
-          opacity: 0;
-          transform: rotate(45deg) translate(20px,20px);
-      }
-  }
+    animation: animate 2s infinite;
+}
+.arrow span:nth-child(2){
+    animation-delay: -0.2s;
+}
+.arrow span:nth-child(3){
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px,-20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(20px,20px);
+    }
+}
+
+.hatched {
+    background-image: url('../assets/bg.png');
+    border-radius: 25px;
+    box-shadow: 10px 10px 33px 3px rgba(0,0,0,0.75);
+}

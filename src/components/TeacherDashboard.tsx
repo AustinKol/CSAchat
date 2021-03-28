@@ -1,7 +1,7 @@
 import firebase from "firebase";
 import React from "react";
 import { useState } from "react";
-import { ListGroup } from "react-bootstrap";
+import { Button, ListGroup } from "react-bootstrap";
 import { useCollection } from "react-firebase-hooks/firestore";
 import ChatPage from "./ChatPage";
 
@@ -35,7 +35,7 @@ function TeacherDashboard() {
                             <ListGroup horizontal>
                                 <ListGroup.Item bsPrefix="list-group-item col-md-2">Personne {idx+1}</ListGroup.Item>
                                 <ListGroup.Item bsPrefix="list-group-item col-md-4">{new Date(user.data()["timeCreated"]["seconds"]*1000).toLocaleString()}</ListGroup.Item>
-                                <ListGroup.Item bsPrefix="list-group-item col-md-2"><button onClick={()=>{setChatting(user.id)}}>Contactez</button></ListGroup.Item>
+                                <ListGroup.Item bsPrefix="list-group-item col-md-2"><Button onClick={()=>{setChatting(user.id)}}>Contactez</Button></ListGroup.Item>
                             </ListGroup>
                         )
                     })

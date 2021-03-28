@@ -1,7 +1,7 @@
 import React from 'react';
 
 function SelfHelp() {
-    return (<>"En progres"</>);
+    return (<>"En progrès"</>);
 }
 
 export default SelfHelp;

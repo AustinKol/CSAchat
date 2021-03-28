@@ -3,16 +3,18 @@ import React from 'react';
 import Home from './components/Home';
 import SelfHelp from './components/SelfHelp';
 import SignIn from './components/SignIn';
+
 import './styles/DownArrow.css';
 
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { BrowserRouter as Switch, Route, HashRouter, Link } from "react-router-dom";
+
 import firebase from 'firebase';
 import TeacherDashboard from './components/TeacherDashboard';
 import AnonChat from './components/AnonChat';
 import About from './components/About';
+import { HashRouter, Link, Route, Switch } from 'react-router-dom';
 
 function App() {
   if (!firebase.apps.length) {
@@ -26,10 +28,8 @@ function App() {
         appId: "1:384915371882:web:2a14a7141b635d69381713"
     });
   } else {
-    console.log("firebase is init");
+    console.log("[WW] Firebase has already started.");
   }
-
-  console.log("here");
   
   return (
     <HashRouter basename="/">

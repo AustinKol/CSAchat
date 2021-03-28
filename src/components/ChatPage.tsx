@@ -16,6 +16,7 @@ function ChatPage(props:any) {
 
     const userMessages = firestore.collection('users').doc(props.uid).collection("messages");
     const query = userMessages.orderBy('time');
+    console.log(props.uid);
 
     firestore.collection('users').doc(props.uid).get().then((doc) => {
         if (doc.data()?.["timeCreated"]) {
@@ -36,8 +37,7 @@ function ChatPage(props:any) {
         scrollThing.current.scrollIntoView({behavior: 'smooth'});
     }
 
-    const [messages] = useCollectionData(query);
-
+    const [messages, loading, error] = useCollectionData(query);
     console.log(messages);
 
     return (
