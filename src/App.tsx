@@ -39,9 +39,11 @@ function App() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link as={Link} to="/">Accueil</Nav.Link>
-            <Nav.Link as={Link} to="/signin">Connection</Nav.Link>
             <Nav.Link as={Link} to="/selfhelp">Ressources</Nav.Link>
             <Nav.Link as={Link} to="/about">Nous connaître</Nav.Link>
+          </Nav>
+          <Nav className="ml-auto">
+            <Nav.Link as={Link} to="/signin">Connection</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

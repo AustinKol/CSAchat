@@ -30,7 +30,7 @@
 }
 
 .hatched {
-    background-image: url('../assets/bg.png');
+    background-image: url('../assets/bg1.png');
     border-radius: 25px;
     box-shadow: 10px 10px 33px 3px rgba(0,0,0,0.75);
 }

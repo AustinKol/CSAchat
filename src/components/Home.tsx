@@ -13,7 +13,7 @@ function Home() {
         <Container>
             <Row>
                 <Col md={6} bsPrefix="col align-self-center">
-                    <Jumbotron className="mb-0" style={{backgroundColor: "white"}}>
+                    <Jumbotron className="mb-0" style={{backgroundColor: "transparent"}}>
                         <h1>Bienvenue</h1>
                         <p>
                             Nous sommes les pair aidants. Nous sommes içi pour vous aider. Chattez avec nous!

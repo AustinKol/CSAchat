@@ -37,7 +37,7 @@ function ChatPage(props:any) {
         scrollThing.current.scrollIntoView({behavior: 'smooth'});
     }
 
-    const [messages, loading, error] = useCollectionData(query);
+    const [messages] = useCollectionData(query);
     console.log(messages);
 
     return (
@@ -46,25 +46,25 @@ function ChatPage(props:any) {
                 <Row>
                     <Col>
                         <ListGroup>
-                            {messages && messages.map((msg:any, i) => <ListGroup.Item style={msg["person"]^props.person ? {placeSelf: "flex-start"} : {placeSelf: "flex-end"}} key={i}>{msg["text"]}</ListGroup.Item>)}
+                            {messages && messages.map((msg:any, i) => {
+                                return(<ListGroup.Item style={msg["person"]^props.person ? {placeSelf: "flex-start", borderColor: "#007bff", borderRadius: "3px", marginTop: "3px", borderWidth: "1px"} : {placeSelf: "flex-end", borderRadius: "3px", marginTop: "3px", borderWidth: "1px"}} key={i}>
+                                    {msg["text"]}
+                                </ListGroup.Item>);
+                            })}
                             <div ref={scrollThing}></div>
                         </ListGroup>
                     </Col>
                 </Row>
-                <Form onSubmit={async (e) => {e.preventDefault(); sendMessage(formValue, props.person)}}>
-                        <Row>
-                            <Col xs={10}>
-                                <Form.Group controlId="msg">
-                                    <Form.Control value={formValue} onChange={c => setFormValue(c.target.value)} type="text" placeholder="Message" />
-                                </Form.Group>
-                            </Col>
-                            <Col>
-                                <Button variant="outline-primary" type="submit">
-                                    Envoyer
-                                </Button> 
-                            </Col>
-                        </Row>
-                </Form>
+            </Container>
+            <Container className="fixed-bottom">
+                    <Form className="input-group mb-3" onSubmit={async (e) => {e.preventDefault(); sendMessage(formValue, props.person)}}>
+                        <Form.Control value={formValue} onChange={c => setFormValue(c.target.value)} type="text" placeholder="Message" />
+                        <div className="input-group-append">
+                            <Button variant="outline-primary" type="submit">
+                                Envoyer
+                            </Button> 
+                        </div>
+                    </Form>
             </Container>
         </>
     );
