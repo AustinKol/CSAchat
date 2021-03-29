@@ -16,17 +16,16 @@ function ChatPage(props:any) {
 
     const userMessages = firestore.collection('users').doc(props.uid).collection("messages");
     const query = userMessages.orderBy('time');
-    console.log(props.uid);
-
-    firestore.collection('users').doc(props.uid).get().then((doc) => {
-        if (doc.data()?.["timeCreated"]) {
-            return;
-        } else {
-            firestore.collection('users').doc(props.uid).set({timeCreated: firebase.firestore.FieldValue.serverTimestamp()});
-        }
-    });
 
     const sendMessage = async (msg:any, person:any) => {
+        firestore.collection('users').doc(props.uid).get().then((doc) => {
+            if (doc.data()?.["timeCreated"] && doc.data()?.["isFinished"]) {
+                return;
+            } else {
+                firestore.collection('users').doc(props.uid).set({timeCreated: firebase.firestore.FieldValue.serverTimestamp(), isFinished: false});
+            }
+        });
+
         await userMessages.add({
             text: msg,
             time: firebase.firestore.FieldValue.serverTimestamp(),
@@ -37,12 +36,32 @@ function ChatPage(props:any) {
         scrollThing.current.scrollIntoView({behavior: 'smooth'});
     }
 
+    async function killRoom() {
+        //firestore.collection('users').doc(props.uid).delete();
+        await sendMessage("Ce chat a été fermé par le modérateur.", 1);
+        await firestore.collection('users').doc(props.uid).update({isFinished: true});
+        props.thread("");
+    }
+
     const [messages] = useCollectionData(query);
     console.log(messages);
 
     return (
         <>
             <Container>
+                {
+                    props.person === 1 ?
+                        <Row>
+                            <Col>
+                                <Button onClick={() => props.thread("")}>Retourner au menu</Button>
+                            </Col>
+                            <Col>
+                                <Button onClick={killRoom}>Finir ce chat</Button>
+                            </Col>
+                        </Row>
+                    : <></>
+                }
+
                 <Row>
                     <Col>
                         <ListGroup>

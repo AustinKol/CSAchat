@@ -15,6 +15,7 @@ import TeacherDashboard from './components/TeacherDashboard';
 import AnonChat from './components/AnonChat';
 import About from './components/About';
 import { HashRouter, Link, Route, Switch } from 'react-router-dom';
+import ChatPage from './components/ChatPage';
 
 function App() {
   if (!firebase.apps.length) {
@@ -66,6 +67,9 @@ function App() {
         </Route>
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="/chatpage">
+          <ChatPage />
         </Route>
       </Switch>
     </HashRouter>

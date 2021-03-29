@@ -45,7 +45,7 @@ function TeacherDashboard() {
     }
     return (
         <>
-            <ChatPage uid={isChatting} person={1}/>
+            <ChatPage thread={setChatting} uid={isChatting} person={1}/>
         </>
     );
 }
